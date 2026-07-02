@@ -36,11 +36,15 @@ dispatchers time to act.
 
 ## 🏗️ Architecture
 
-Streamlit Frontend → Spring Boot REST API (Java, port 8080)
-↓
+```
+Streamlit Frontend
+       ↓
+Spring Boot REST API (Java, port 8080)
+       ↓
 Flask ML API (Python, port 5000)
-↓
+       ↓
 Logistic Regression Model (scikit-learn)
+```
 
 ---
 
@@ -107,36 +111,27 @@ Logistic Regression Model (scikit-learn)
 
 ## 📁 Project Structure
 
+```
 jdi-delivery-delay-predictor/
-│
 ├── data/
-│ ├── raw/ ← generated synthetic dataset
-│ └── processed/ ← cleaned and encoded dataset
-│
+│   ├── raw/                         ← generated synthetic dataset
+│   └── processed/                   ← cleaned and encoded dataset
 ├── notebooks/
-│ ├── 01_data_generation.ipynb ← dataset creation
-│ ├── 02_eda.ipynb ← exploratory data analysis
-│ ├── 03_feature_engineering.ipynb← encoding, scaling, imputation
-│ ├── 04_model_training.ipynb ← LR vs SVM training + comparison
-│ └── 05_model_evaluation.ipynb ← feature importance, PR curve
-│
+│   ├── 01_data_generation.ipynb     ← dataset creation
+│   ├── 02_eda.ipynb                 ← exploratory data analysis
+│   ├── 03_feature_engineering.ipynb ← encoding, scaling, imputation
+│   ├── 04_model_training.ipynb      ← LR vs SVM training + comparison
+│   └── 05_model_evaluation.ipynb    ← feature importance, PR curve
 ├── models/
-│ └── best_model.pkl ← saved logistic regression model
-│
+│   └── best_model.pkl               ← saved logistic regression model
 ├── app/
-│ ├── flask_api.py ← ML model served as REST API
-│ └── streamlit_app.py ← interactive web interface
-│
-├── springboot/ ← Java Spring Boot REST layer
-│ └── src/main/java/com/jdi/
-│ deliverypredictor/
-│ ├── DeliveryController.java
-│ ├── DeliveryRequest.java
-│ └── PredictionResponse.java
-│
-├── charts/ ← all EDA and evaluation charts
-├── screenshots/ ← app demo screenshots
+│   ├── flask_api.py                 ← ML model served as REST API
+│   └── streamlit_app.py             ← interactive web interface
+├── springboot/                      ← Java Spring Boot REST layer
+├── charts/                          ← EDA and evaluation charts
+├── screenshots/                     ← app demo screenshots
 └── README.md
+```
 
 ---
 
